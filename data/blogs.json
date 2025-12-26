@@ -1,14 +1,14 @@
 [
   {
-    "title": "Why AI & ML Are Core Skills for Engineers",
-    "date": "2025-01-12",
+    "title": "Mastering SQL for Data Management",
+    "date": "2025-12-26",
     "author": "Mr. Nitish Kumar",
-    "content": "# Introduction\nAI and ML are no longer optional.\n\n## Key Focus Areas\n- Intelligent systems\n- Data-driven decision making\n\n```python\nprint('AI for Engineers')\n```\n\nTeaching focuses on theory + practice."
+    "content": "# Introduction\nSQL (Structured Query Language) is the backbone of relational database management. Every engineer working with data should master SQL for querying, manipulating, and managing data.\n\n## Key Concepts\n- **SELECT**: Retrieve data from tables\n- **JOIN**: Combine data from multiple tables\n- **GROUP BY**: Aggregate data\n\n## Example: Employee Database Query\nRetrieve the names of employees and their department names:\n\n```sql\nSELECT e.name, d.department_name\nFROM employees AS e\nJOIN departments AS d ON e.department_id = d.id\nWHERE e.salary > 50000\nORDER BY e.name;\n```\n\nThis query demonstrates combining tables, filtering results, and ordering them.\n\n## Best Practices\n- Always use explicit joins for clarity\n- Avoid `SELECT *` in production queries\n- Index important columns for performance\n\nSQL skills empower engineers to efficiently access and analyze large datasets."
   },
   {
-    "title": "How I Design Industry-Oriented Courses",
-    "date": "2024-12-05",
+    "title": "Understanding NL2SQL with Large Language Models",
+    "date": "2025-12-26",
     "author": "Mr. Nitish Kumar",
-    "content": "Course design bridges **academia and industry** with hands-on labs and projects."
+    "content": "# Introduction\nNL2SQL is a fascinating application of NLP (Natural Language Processing) where users write **natural language queries**, and a model converts them into SQL statements automatically.\n\n## How NL2SQL Works\n1. **Input Processing**: Tokenize user input and understand intent.\n2. **Semantic Mapping**: Map natural language entities to database schema.\n3. **SQL Generation**: Construct syntactically correct SQL statements.\n\n## Example\nNatural language query:\n```\nList the names of employees in the Sales department earning more than $50,000\n```\nGenerated SQL:\n```sql\nSELECT name\nFROM employees\nWHERE department = 'Sales' AND salary > 50000;\n```\n\n## Using Transformer Models\nLarge language models like CodeT5 or GPT variants can be fine-tuned on NL2SQL datasets to perform this mapping.\n\n```python\nfrom transformers import AutoTokenizer, AutoModelForSeq2SeqLM\n\ntokenizer = AutoTokenizer.from_pretrained('Salesforce/codet5-base')\nmodel = AutoModelForSeq2SeqLM.from_pretrained('path_to_your_finetuned_model')\n\nnl_query = 'List all employees in Marketing earning above 60000'\ninputs = tokenizer(nl_query, return_tensors='pt')\noutputs = model.generate(**inputs)\nsql_query = tokenizer.decode(outputs[0], skip_special_tokens=True)\nprint(sql_query)\n```\n\nNL2SQL enables non-technical users to query databases easily and demonstrates the power of AI in education and data accessibility."
   }
 ]
