@@ -11,6 +11,6 @@
     "description": "In this research-oriented project, I supervised the design and implementation of a modern data warehouse pipeline using a layered architecture: Bronze (raw, unprocessed data ingestion), Silver (cleaned, normalized and transformed data), and Gold (aggregated, analytics-ready datasets). The project demonstrates best practices in ETL processes, data engineering, and academic research guidance. Students learned how to transform raw data into actionable insights and applied these techniques to real-world academic datasets, enabling efficient business intelligence reporting and research-driven analytics. My guidance ensured adherence to industry standards while maintaining a strong research perspective.",
     "technologies": ["Python", "PySpark", "SQL", "ETL", "Data Engineering", "Academic Research"],
     "role": "Research Project",
-    "link": "https://github.com/yourusername/data-warehousing"
+    "link": "https://github.com/Pro-Nik/Sql-data-warehouse-project"
   }
 ]
