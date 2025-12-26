@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Signup | Academic Portal</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="auth-container">
+  <div class="auth-card">
+
+    <h2>Student Registration</h2>
+    <p class="subtitle">Create your academic account</p>
+
+    <form onsubmit="signup(event)">
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="email" id="email" placeholder="University Email" required>
+      <input type="password" id="password" placeholder="Create Password" required>
+      <button class="btn">Sign Up</button>
+    </form>
+
+    <div class="auth-footer">
+      Already registered? <a href="login.html">Login here</a>
+    </div>
+
+  </div>
+</div>
+
+<script src="js/auth.js"></script>
+</body>
+</html>

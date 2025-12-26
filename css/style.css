@@ -1,0 +1,372 @@
+/* =====================================================
+   GLOBAL COLOR SYSTEM (ACADEMIC)
+===================================================== */
+:root {
+  --bg: #f6f9fd;
+  --bg-secondary: #eef5ff;
+
+  --primary: #1e88e5;      /* Light Academic Blue */
+  --secondary: #2ecc71;    /* Soft Green Accent */
+
+  --card: #ffffff;
+  --border: #dbe7f3;
+
+  --text: #0f172a;
+  --muted: #475569;
+
+  --btn-text: #ffffff;
+}
+
+/* ---------------- DARK MODE ---------------- */
+body.dark {
+  --bg: #0b1220;
+  --bg-secondary: #111a2e;
+
+  --primary: #60a5fa;
+  --secondary: #4ade80;
+
+  --card: #121a2f;
+  --border: #1e293b;
+
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+
+  --btn-text: #0b1220;
+}
+
+/* =====================================================
+   BASE
+===================================================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h2 {
+  color: var(--primary);
+  margin: 0;
+}
+
+.navbar a {
+  color: var(--muted);
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  color: var(--primary);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  margin-left: 20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 18px;
+  color: var(--text);
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+.hero {
+  background: linear-gradient(135deg, #dbeafe, #e0f2fe);
+  padding: 90px 20px;
+  text-align: center;
+}
+
+body.dark .hero {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: var(--primary);
+}
+
+.hero h3 {
+  color: var(--secondary);
+  font-weight: 500;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 18px auto;
+  color: var(--muted);
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+.btn {
+  background: var(--primary);
+  color: var(--btn-text);
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+.section {
+  padding: 70px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.section.light {
+  background: var(--bg-secondary);
+}
+
+.center {
+  text-align: center;
+}
+
+.section h2 {
+  border-left: 5px solid var(--secondary);
+  padding-left: 12px;
+}
+
+/* =====================================================
+   CARDS
+===================================================== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 22px;
+  border-radius: 14px;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+  transition: transform 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* =====================================================
+   DASHBOARD
+===================================================== */
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+.dashboard aside {
+  width: 240px;
+  background: var(--card);
+  border-right: 1px solid var(--border);
+  padding: 25px;
+}
+
+.dashboard aside h3 {
+  color: var(--primary);
+}
+
+.dashboard aside a {
+  display: block;
+  padding: 12px;
+  color: var(--muted);
+  text-decoration: none;
+  border-radius: 8px;
+  margin-bottom: 6px;
+}
+
+.dashboard aside a:hover {
+  background: var(--bg-secondary);
+  color: var(--primary);
+}
+
+.dashboard main {
+  flex: 1;
+  padding: 35px;
+}
+
+/* =====================================================
+   COURSE CARDS
+===================================================== */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.course-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.course-card h3 {
+  color: var(--primary);
+}
+
+/* =====================================================
+   AUTH PAGES
+===================================================== */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #eef5ff, #e0f2fe);
+}
+
+.auth-card {
+  background: var(--card);
+  width: 100%;
+  max-width: 420px;
+  padding: 35px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.auth-card h2 {
+  text-align: center;
+  color: var(--primary);
+}
+
+.auth-card input {
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  width: 100%;
+}
+
+/* =====================================================
+   BLOGS
+===================================================== */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.blog-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 25px;
+  border-radius: 14px;
+}
+
+.blog-card small {
+  color: var(--muted);
+}
+
+pre {
+  background: #020617;
+  color: #22c55e;
+  padding: 14px;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: var(--bg-secondary);
+  color: var(--muted);
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .dashboard aside {
+    width: 100%;
+  }
+}
+
+
+#projects h3 {
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+#projects p {
+  color: var(--muted);
+}
+
+/* ---------- COURSE SEARCH ---------- */
+.course-search {
+  width: 100%;
+  max-width: 420px;
+  padding: 12px 15px;
+  margin: 15px 0 25px 0;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 0.95rem;
+}
+
+.course-search:focus {
+  outline: none;
+  border-color: var(--primary);
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="loadUser()">
+
+<div class="dashboard">
+  <aside>
+    <h3>Dashboard</h3>
+    <a href="dashboard.html">Courses</a>
+    <a href="#" onclick="logout()">Logout</a>
+  </aside>
+
+  <main>
+    <h2 id="welcome"></h2>
+
+    <h3>My Courses</h3>
+
+    <!-- 🔍 SEARCH BAR -->
+    <input 
+      type="text" 
+      id="courseSearch" 
+      placeholder="Search by course name, code or semester..."
+      onkeyup="filterCourses()"
+      class="course-search"
+    >
+
+    <div class="course-grid" id="courseGrid">
+
+      <div class="course-card" data-name="Machine Learning" data-code="ML" data-sem="NA">
+        <h3>Machine Learning</h3>
+        <p><strong>Code:</strong> ML</p>
+        <p><strong>Semester:</strong> NA</p>
+        <a href="course.html?course=ML" class="btn">View Course</a>
+      </div>
+
+      <div class="course-card" data-name="Artificial Intelligence" data-code="AI" data-sem="NA">
+        <h3>Artificial Intelligence</h3>
+        <p><strong>Code:</strong> AI</p>
+        <p><strong>Semester:</strong> NA</p>
+        <a href="course.html?course=AI" class="btn">View Course</a>
+      </div>
+
+      <div class="course-card" data-name="Database Management Systems" data-code="DBMS" data-sem="NA">
+        <h3>Database Management Systems</h3>
+        <p><strong>Code:</strong> DBMS</p>
+        <p><strong>Semester:</strong> NA</p>
+        <a href="course.html?course=DBMS" class="btn">View Course</a>
+      </div>
+
+      <div class="course-card" data-name="Deep Learning" data-code="DL" data-sem="NA">
+        <h3>Deep Learning</h3>
+        <p><strong>Code:</strong> DL</p>
+        <p><strong>Semester:</strong> NA</p>
+        <a href="course.html?course=DL" class="btn">View Course</a>
+      </div>
+
+    </div>
+
+  </main>
+</div>
+
+<script src="js/auth.js"></script>
+<script src="js/student.js"></script>
+
+<!-- 🔎 SEARCH SCRIPT -->
+<script>
+function filterCourses() {
+  const query = document.getElementById("courseSearch").value.toLowerCase();
+  const courses = document.querySelectorAll(".course-card");
+
+  courses.forEach(course => {
+    const name = course.dataset.name.toLowerCase();
+    const code = course.dataset.code.toLowerCase();
+    const sem  = course.dataset.sem.toLowerCase();
+
+    if (name.includes(query) || code.includes(query) || sem.includes(query)) {
+      course.style.display = "block";
+    } else {
+      course.style.display = "none";
+    }
+  });
+}
+</script>
+
+</body>
+</html>

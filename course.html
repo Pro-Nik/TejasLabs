@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Course Materials</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<section>
+  <h2 id="courseTitle"></h2>
+
+  <ul id="materials"></ul>
+</section>
+
+<script>
+const courses = {
+  ML: {
+    title: "Machine Learning",
+    files: [
+      { name: "Unit 1 Notes", path: "resources/ML/nitish_final_diat.pdf" },
+      { name: "Unit 1 PPT", path: "resources/ML/unit1.pptx" },
+      { name: "Unit 2 Notes", path: "resources/ML/nitish_final_diat.pdf" },
+      { name: "Unit 2 PPT", path: "resources/ML/unit1.pptx" }
+    ]
+  },
+  AI: {
+    title: "Artificial Intelligence",
+    files: [
+      { name: "AI Introduction PDF", path: "resources/AI/intro.pdf" }
+    ]
+  },
+  DBMS: {
+    title: "Database Management Systems",
+    files: [
+      { name: "SQL 1", path: "resources/DBMS/NL2SQL.pdf" }
+    ]
+  },
+  DL: {
+    title: "Deep Learning",
+    files: [
+      { name: "Neural Networks PPT", path: "resources/DL/nn.ppt" }
+    ]
+  }
+};
+
+const params = new URLSearchParams(window.location.search);
+const courseKey = params.get("course");
+
+const course = courses[courseKey];
+document.getElementById("courseTitle").innerText = course.title;
+
+const list = document.getElementById("materials");
+
+course.files.forEach(f => {
+  const li = document.createElement("li");
+  li.innerHTML = `${f.name} <a class="btn" href="${f.path}" download>Download</a>`;
+  list.appendChild(li);
+});
+</script>
+
+</body>
+</html>
