@@ -1,23 +1,16 @@
 [
   {
-    "title": "Intelligent Student Performance Prediction",
-    "description": "Machine learning based system to predict student academic performance using demographic and academic features.",
-    "technologies": ["Python", "Scikit-learn", "Pandas"],
+    "title": "NL2SQL System for OSQuery",
+    "description": "As an Assistant Professor, I guided the development of an AI-powered NL2SQL system for OSQuery. This system allows students and users to write natural language queries which are automatically converted into executable SQL statements. The approach involves a two-step process: first, intelligently retrieving relevant tables and columns from the database schema, and second, generating SQL queries using a fine-tuned CodeT5 model. The project emphasizes practical applications of Natural Language Processing, machine learning, and database management, bridging academic research with real-world cybersecurity and database analysis tasks.",
+    "technologies": ["Python", "Transformers", "OSQuery", "NL2SQL", "Machine Learning", "Natural Language Processing"],
     "role": "Project Guide",
-    "link": "https://github.com/yourusername/student-performance-ml"
+    "link": "https://github.com/yourusername/nl2sql-osquery"
   },
   {
-    "title": "Smart Attendance System using Face Recognition",
-    "description": "Deep learning based face recognition system for automated classroom attendance.",
-    "technologies": ["Deep Learning", "OpenCV", "TensorFlow"],
+    "title": "Data Warehousing with Bronze, Silver, Gold Layers",
+    "description": "In this research-oriented project, I supervised the design and implementation of a modern data warehouse pipeline using a layered architecture: Bronze (raw, unprocessed data ingestion), Silver (cleaned, normalized and transformed data), and Gold (aggregated, analytics-ready datasets). The project demonstrates best practices in ETL processes, data engineering, and academic research guidance. Students learned how to transform raw data into actionable insights and applied these techniques to real-world academic datasets, enabling efficient business intelligence reporting and research-driven analytics. My guidance ensured adherence to industry standards while maintaining a strong research perspective.",
+    "technologies": ["Python", "PySpark", "SQL", "ETL", "Data Engineering", "Academic Research"],
     "role": "Research Project",
-    "link": "https://github.com/yourusername/student-performance-ml"
-  },
-  {
-    "title": "Library Management System",
-    "description": "Database-driven academic project for undergraduate students using SQL and normalization principles.",
-    "technologies": ["DBMS", "SQL", "PHP"],
-    "role": "Student Guided Project",
-    "link": "https://github.com/yourusername/student-performance-ml"
+    "link": "https://github.com/yourusername/data-warehousing"
   }
 ]
