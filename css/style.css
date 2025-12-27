@@ -543,3 +543,47 @@ iframe {
   border-radius: 6px;
   cursor: pointer;
 }
+
+
+
+
+
+.course-select {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.course-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.course-card {
+  width: 260px;
+  padding: 16px;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+}
+
+.course-card h4 {
+  margin-bottom: 8px;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 4px 8px;
+  font-size: 12px;
+  background: #e3f2fd;
+  border-radius: 5px;
+}
+
