@@ -118,13 +118,44 @@
 
 
 
-<section id="chatbot" class="section light">
-  <h2>Ask Your Professor 🤖</h2>
-  <p class="muted">
-    An academic assistant to help students with AI, ML, DBMS & career guidance.
-  </p>
 
-  <div class="chatbox">
+<section id="chatbot" class="section light">
+  <h2>📘 Course-Specific Academic Chatbot</h2>
+
+  <!-- COURSE SELECTION -->
+  <!-- COURSE SELECTION -->
+<div id="courseSelect" class="course-select">
+  <h3>📘 Select Course for Academic Assistance</h3>
+
+  <div class="course-cards">
+    <div class="course-card" onclick="selectCourse('ML')">
+      <h4>Machine Learning</h4>
+      <p>Supervised, Unsupervised, Models, Evaluation</p>
+    </div>
+
+    <div class="course-card" onclick="selectCourse('DBMS')">
+      <h4>DBMS</h4>
+      <p>SQL, Normalization, Transactions, Indexing</p>
+    </div>
+
+    <div class="course-card" onclick="selectCourse('DL')">
+      <h4>Deep Learning</h4>
+      <p>Neural Networks, CNN, RNN, Transformers</p>
+    </div>
+
+    <div class="course-card" onclick="selectCourse('AI')">
+      <h4>Artificial Intelligence</h4>
+      <p>Search, Knowledge, Planning, Reasoning</p>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- CHAT AREA -->
+  <div id="chatArea" style="display:none;">
+    <h3 id="courseTitle"></h3>
+
     <div id="chatWindow" class="chat-window"></div>
 
     <div class="chat-input">
@@ -133,6 +164,7 @@
     </div>
   </div>
 </section>
+
 
 
 
