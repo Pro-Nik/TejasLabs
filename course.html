@@ -1,62 +1,169 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Course Materials</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  
 
-<section>
+<button class="back-btn" onclick="goBack()">Back to Dashboard</button>
+
+<section class="section light">
   <h2 id="courseTitle"></h2>
 
-  <ul id="materials"></ul>
+  <div id="chapters"></div>
 </section>
 
 <script>
+/* ==========================
+   COURSE DATA (EDIT ONLY THIS)
+========================== */
 const courses = {
   ML: {
     title: "Machine Learning",
-    files: [
-      { name: "Unit 1 Notes", path: "resources/ML/nitish_final_diat.pdf" },
-      { name: "Unit 1 PPT", path: "resources/ML/unit1.pptx" },
-      { name: "Unit 2 Notes", path: "resources/ML/nitish_final_diat.pdf" },
-      { name: "Unit 2 PPT", path: "resources/ML/unit1.pptx" }
+    chapters: [
+      {
+        unit: "Unit 1: Introduction to ML",
+        materials: [
+          { type: "PDF", name: "Unit 1 Notes", path: "resources/ML/unit1.pdf" },
+          { type: "PPT", name: "Unit 1 PPT", path: "resources/ML/unit1.pptx" },
+          { type: "VIDEO", name: "Lecture Video", path: "resources/ML/unit1.mp4" }
+        ]
+      },
+      {
+        unit: "Unit 2: Supervised Learning",
+        materials: [
+          { type: "PDF", name: "Unit 2 Notes", path: "resources/ML/unit2.pdf" },
+          { type: "PPT", name: "Unit 2 PPT", path: "resources/ML/unit2.pptx" }
+        ]
+      }
     ]
   },
+
   AI: {
     title: "Artificial Intelligence",
-    files: [
-      { name: "AI Introduction PDF", path: "resources/AI/intro.pdf" }
+    chapters: [
+      {
+        unit: "Unit 1: AI Foundations",
+        materials: [
+          { type: "PDF", name: "AI Notes", path: "resources/AI/unit1.pdf" },
+          { type: "PPT", name: "AI PPT", path: "resources/AI/unit1.pptx" }
+        ]
+      }
     ]
   },
+
   DBMS: {
     title: "Database Management Systems",
-    files: [
-      { name: "SQL 1", path: "resources/DBMS/NL2SQL.pdf" }
+    chapters: [
+      {
+        unit: "Unit 1: SQL & Relational Model",
+        materials: [
+          { type: "PDF", name: "SQL Notes", path: "resources/DBMS/sql.pdf" },
+          { type: "PPT", name: "SQL PPT", path: "resources/DBMS/sql.pptx" }
+        ]
+      }
     ]
   },
+
   DL: {
     title: "Deep Learning",
-    files: [
-      { name: "Neural Networks PPT", path: "resources/DL/nn.ppt" }
+    chapters: [
+      {
+        unit: "Unit 1: Neural Networks",
+        materials: [
+          { type: "PDF", name: "NN Notes", path: "resources/DL/nn.pdf" },
+          { type: "PPT", name: "NN PPT", path: "resources/DL/nn.pptx" }
+        ]
+      }
     ]
   }
 };
 
+/* ==========================
+   LOAD COURSE
+========================== */
 const params = new URLSearchParams(window.location.search);
 const courseKey = params.get("course");
-
 const course = courses[courseKey];
+
 document.getElementById("courseTitle").innerText = course.title;
 
-const list = document.getElementById("materials");
+const container = document.getElementById("chapters");
 
-course.files.forEach(f => {
-  const li = document.createElement("li");
-  li.innerHTML = `${f.name} <a class="btn" href="${f.path}" download>Download</a>`;
-  list.appendChild(li);
+/* ==========================
+   RENDER CHAPTERS
+========================== */
+course.chapters.forEach((chapter, index) => {
+  const div = document.createElement("div");
+  div.className = "chapter-card";
+
+  let content = `
+    <h3 onclick="toggleChapter(${index})" class="chapter-title">
+      📘 ${chapter.unit}
+      <span class="toggle-icon">+</span>
+    </h3>
+    <div class="chapter-content" id="chapter-${index}">
+  `;
+
+  chapter.materials.forEach(m => {
+    if (m.type === "VIDEO") {
+  content += `
+    <div class="material-row">
+      🎥 ${m.name}
+      <button class="btn btn-small" onclick="playVideo('${m.path}', this)">
+        Watch Video
+      </button>
+    </div>
+  `;
+}
+ else {
+      content += `
+        <div class="material-row">
+          📄 ${m.name}
+          <a href="${m.path}" class="btn btn-small" download>Download</a>
+        </div>
+      `;
+    }
+  });
+
+  content += `</div>`;
+  div.innerHTML = content;
+  container.appendChild(div);
 });
+
+/* ==========================
+   TOGGLE FUNCTION
+========================== */
+function toggleChapter(id) {
+  const chapter = document.getElementById("chapter-" + id);
+  chapter.style.display = chapter.style.display === "block" ? "none" : "block";
+}
 </script>
+<script>
+function goBack() {
+  window.location.href = "dashboard.html";
+}
+</script>
+
+<script>
+function playVideo(url, btn) {
+  const container = document.createElement("div");
+  container.innerHTML = `
+    <iframe src="${url}" frameborder="0" allowfullscreen></iframe>
+  `;
+  btn.parentElement.appendChild(container);
+  btn.remove(); // remove watch button
+}
+</script>
+
+
+
+
 
 </body>
 </html>
