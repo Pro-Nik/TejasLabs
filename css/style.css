@@ -59,7 +59,7 @@ body {
   z-index: 100;
   background: var(--card);
   border-bottom: 1px solid var(--border);
-  padding: 16px 40px;
+  padding: 0px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
