@@ -93,7 +93,23 @@
         <p><strong>Semester:</strong> NA</p>
         <!-- <a href="course.html?course=DL" class="btn">View Course</a> -->
         <button class="btn" onclick="openCourseModal('RL')">View Course</button>
+      </div>
 
+
+       <div class="course-card" data-name="Data Structures" data-code="DS" data-sem="2">
+        <h3>Data Structures</h3>
+        <p><strong>Code:</strong> 24UBCACC104</p>
+        <p><strong>Semester:</strong> 2</p>
+        <!-- <a href="course.html?course=DL" class="btn">View Course</a> -->
+        <button class="btn" onclick="openCourseModal('DS')">View Course</button>
+      </div>
+
+      <div class="course-card" data-name="Web Technologies" data-code="WT" data-sem="2">
+        <h3>Web Technologies</h3>
+        <p><strong>Code:</strong>24UBCA205</p>
+        <p><strong>Semester:</strong> 2</p>
+        <!-- <a href="course.html?course=DL" class="btn">View Course</a> -->
+        <button class="btn" onclick="openCourseModal('WT')">View Course</button>
       </div>
 
     </div>
@@ -137,7 +153,9 @@ const COURSE_CODES = {
   AI:   "QUkyMDI1",      // btoa("AI2025")
   DBMS: "REJNUzIwMjU=",  // btoa("DBMS2025")
   DL:   "REwyMDI1" ,
-  RL: "UkwyMDI1"      // btoa("DL2025")
+  RL: "UkwyMDI1",
+  DS: "UkwyMDI1",
+  WT:  "UkwyMDI1"     // btoa("DL2025")
 };
 
 function openCourseModal(course) {
