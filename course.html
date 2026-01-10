@@ -29,9 +29,9 @@ const courses = {
       {
         unit: "Unit 1: Introduction to ML",
         materials: [
-          { type: "PDF", name: "Unit 1 Notes", path: "resources/ML/ml1.pdf" },
-          { type: "PPT", name: "Unit 1 PPT", path: "resources/ML/ml1.pptx" },
-          { type: "VIDEO", name: "Lecture Video", path: "resources/ML/ml1.mp4" }
+          { type: "PDF", name: "Unit 1 Notes", path: "resources/ML/unit1.pdf" },
+          { type: "PPT", name: "Unit 1 PPT", path: "resources/ML/unit1.pptx" },
+          { type: "VIDEO", name: "Lecture Video", path: "resources/ML/unit1.mp4" }
         ]
       },
       {
@@ -99,7 +99,52 @@ const courses = {
         ]
       }
     ]
-  }
+  },
+
+
+  DS: {
+    title: "Data Structures",
+    chapters: [
+      {
+        unit: "Lecture 0: Introduction to Data Structures",
+        materials: [
+          { type: "PDF", name: "DS0 Notes", path: "resources/DS/DS_Lecture0.pdf" },
+          { type: "PPT", name: "DS0 PPT", path: "resources/DS/DS_Lecture0.pptx" },
+          { type: "VIDEO", name: "Lecture Video", path: "resources/DS/DS0.mp4" }
+
+        ]
+      },
+      {
+        unit: "Lecture 1: Types of Data Structures",
+        materials: [
+          { type: "PDF", name: "DS1 Notes", path: "resources/DS/DS1.pdf" },
+          { type: "PPT", name: "DS1 PPT", path: "resources/DS/DS1.pptx" },
+          { type: "VIDEO", name: "Lecture Video", path: "resources/DS/DS1.mp4" }
+
+        ]
+      }
+
+    ]
+  },
+
+  OS: {
+    title: "Web Technologies",
+    chapters: [
+      {
+        unit: "Lecture 1: Introduction to HTML",
+        materials: [
+          { type: "PDF", name: "WT1 Notes", path: "resources/WT/WT_Lecture1.pdf" },
+          { type: "PPT", name: "WT1 PPT", path: "resources/WT/WT_Lecture1.pptx" },
+          { type: "VIDEO", name: "Lecture Video", path: "resources/WT/WT1.mp4" }
+
+        ]
+      },
+
+
+    ]
+  },
+
+  
 };
 
 /* ==========================
@@ -178,10 +223,5 @@ function playVideo(url, btn) {
   btn.remove(); // remove watch button
 }
 </script>
-
-
-
-
-
 </body>
 </html>
