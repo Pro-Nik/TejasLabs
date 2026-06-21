@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1,
+    "title": "Introduction to Artificial Intelligence",
+    "date": "2026-06-21",
+    "author": "Nitish Kumar",
+    "file": "assets/blogs/blog1.txt",
+    "image": "assets/images/ai_blog.jpg"
+  },
+
+  {
+    "id": 2,
+    "title": "Understanding Neural Networks",
+    "date": "2026-06-22",
+    "author": "Nitish Kumar",
+    "file": "assets/blogs/blog2.txt",
+    "image": "assets/images/nn.jpg"
+  }
+]
